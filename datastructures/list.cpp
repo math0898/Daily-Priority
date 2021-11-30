@@ -1,4 +1,3 @@
-#include <iostream>
 #include "list.h"
 
 using namespace std;
@@ -6,7 +5,7 @@ using namespace std;
 /**
  * The default constructor for a list object. Sets the head/tail pointers to a nullptr so everything is ready to go.
  */
-List::List () {
+List<class T>::List () {
     this->head = nullptr;
     this->tail = nullptr;
     this->iterator = nullptr;
@@ -17,7 +16,7 @@ List::List () {
  * 
  * @return True if and only if there is another node in the list.
  */
-bool List::hasNext () {
+bool List<class T>::hasNext () {
     return this->iterator == nullptr;
 }
 
@@ -26,10 +25,11 @@ bool List::hasNext () {
  * 
  * @return The string in the next node.
  */
-string List::next () {
-    if (this->iterator == nullptr) return NULL;
+template <class T>
+T List<class T>::next () {
+    if (this->iterator == nullptr) return (T) NULL;
     else {
-        string r = this->iterator->data;
+        T r = this->iterator->data;
         this->iterator = this->iterator->next;
         return r;
     }
@@ -38,7 +38,7 @@ string List::next () {
 /**
  * Resets the iterator to the head. Does not visit the first node in the list.
  */
-void List::resetIterator () {
+void List<class T>::resetIterator () {
     this->iterator = this->head;
 }
 
@@ -47,8 +47,9 @@ void List::resetIterator () {
  * 
  * @param s The string to add in a new node.
  */
-void List::add (string s) {
-    Node* node = new Node(s, nullptr);
+template <class T>
+void List<class T>::add (T s) {
+    Node* node = new Node<T>(s, nullptr);
     if (this->tail == nullptr) { // Empty list
         this->tail = node;
         this->head = node;

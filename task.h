@@ -2,14 +2,14 @@
 #define TASK_H
 
 #include <iostream>
-#include "list.h"
+#include "datastructures/list.h"
 
 /**
  * The task class describes how tasks are saved, loaded, and used during runtime.
  * 
  * @author Sugaku
  */
-class Task {
+class Task { //TODO operator=, and copy constructor
 
     private:
 
@@ -21,7 +21,7 @@ class Task {
         /**
          * The given description of the task. Can be an array of strings, each representing a single line.
          */
-        List description;
+        List<std::string>* description;
 
         /**
          * The priority of this task.
@@ -36,7 +36,7 @@ class Task {
          * @param name The name that the task will go by.
          * @param priority The priority of the task will be set at.
          */
-        Task (std::string name, int priority) : name(name), priority(priority), description(List()) {}
+        Task (std::string name, int priority) : name(name), priority(priority), description(new List<std::string>()) {}
 
         /**
          * Creates a new task by importing it from the given file.

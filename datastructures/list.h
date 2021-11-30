@@ -1,7 +1,7 @@
 #ifndef LIST_H
 #define LIST_H
 
-#include <iostream>
+template <class T>
 
 /**
  * A singly linked list with a pointer to the head node and another at the end for adding. Access to the middle is not needed 
@@ -24,7 +24,7 @@ class List {
                     /**
                      * The actual data stored in the node.
                      */
-                    std::string data;
+                    T data;
 
                     /**
                      * A pointer to the next node in a list.
@@ -37,7 +37,7 @@ class List {
                      * @param data The data to store in this node.
                      * @param next The pointer to store as 'next'.
                      */
-                    Node (std::string data, Node* next) : data(data), next(next) {}
+                    Node (T data, Node* next) : data(data), next(next) {}
         };
 
         /**
@@ -74,7 +74,7 @@ class List {
          * 
          * @return The string in the next node.
          */
-        std::string next ();
+        T next ();
 
         /**
          * Resets the iterator to the head. Does not visit the first node in the list.
@@ -86,7 +86,7 @@ class List {
          * 
          * @param s The string to add in a new node.
          */
-        void add (std::string s);
+        void add (T s);
 };
 
 #endif /* LIST_H */
