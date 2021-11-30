@@ -9,3 +9,7 @@ This project is written in C++ with perhaps a few segments that could be conside
 ## Core Data Structures
 
 todo
+
+## Bugs
+
+Known bugs can be found at [Issues](https://github.com/math0898/Daily-Priority/issues). If you find any bugs which are currently not listed please create a new issue detailing the bug along with how to recreate it.

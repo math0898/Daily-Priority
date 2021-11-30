@@ -2,6 +2,7 @@
 #define TASK_H
 
 #include <iostream>
+#include "list.h"
 
 /**
  * The task class describes how tasks are saved, loaded, and used during runtime.
@@ -20,12 +21,7 @@ class Task {
         /**
          * The given description of the task. Can be an array of strings, each representing a single line.
          */
-        std::string* description;
-
-        /**
-         * The number of lines in the description. Used to prevent segfaults.
-         */
-        int lines;
+        List description;
 
         /**
          * The priority of this task.
@@ -40,12 +36,12 @@ class Task {
          * @param name The name that the task will go by.
          * @param priority The priority of the task will be set at.
          */
-        Task (std::string name, int priority) : name(name), priority(priority), lines(0), description(nullptr) {}
+        Task (std::string name, int priority) : name(name), priority(priority), description(List()) {}
 
         /**
          * Creates a new task by importing it from the given file.
          * 
-         * TODO: Raw Text? Yaml? Binary?
+         * TODO: Binary?
          * 
          * @param filename The relative path to the file to import.
          */
