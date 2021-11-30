@@ -2,7 +2,7 @@
 #define TASK_H
 
 #include <iostream>
-#include "datastructures/list.h"
+#include "list.h"
 
 /**
  * The task class describes how tasks are saved, loaded, and used during runtime.

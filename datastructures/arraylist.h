@@ -9,7 +9,7 @@ template <class T>
  * 
  * @author Sugaku
  */
-class ArrayList { // Bit shifts
+class ArrayList { // TODO add deconstructor, add operator =, copy constructor, remove(int) + remove(obj) <-- deletes object
     
     private:
 
