@@ -27,7 +27,9 @@ Task::Task (std::string filename) {
  * Destroys the task by properly deconstructing the pointers.
  */
 Task::~Task () {
-    // TODO implement.
+    name = "";
+    description = new List<std::string>();
+    priority = 0;
 }
 
 /**
