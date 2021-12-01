@@ -1,16 +1,6 @@
 #include "arraylist.h"
 
 /**
- * Creates a new ArrayList that does not have any data.
- */
-template <class T>
-ArrayList<class T>::ArrayList () {
-    size = 0;
-    allocated = 1;
-    data = new T[1];
-}
-
-/**
  * Iterates through a few lists before accessing the array where this index is stored. The object stored there is 
  * then returned.
  * 

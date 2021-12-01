@@ -24,15 +24,6 @@ Task::Task (std::string filename) {
 }
 
 /**
- * Destroys the task by properly deconstructing the pointers.
- */
-Task::~Task () {
-    name = "";
-    description = new List<std::string>();
-    priority = 0;
-}
-
-/**
  * Adds a line to the descrption of the task.
  * 
  * @param line The line to add to the task description.

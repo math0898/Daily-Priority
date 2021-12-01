@@ -31,9 +31,14 @@ class ArrayList { // TODO add deconstructor, add operator =, copy constructor, r
     public:
 
         /**
-         * Creates a new ArrayList that does not have any data.
+         * Creates a new ArrayList that does not have any data. This is defined in the header file since the compiler needs to
+         * be able to understand the type of 'T'.
          */
-        ArrayList ();
+        ArrayList () {
+            size = 0;
+            allocated = 1;
+            data = new T[1];
+        }
 
         /**
          * Iterates through a few lists before accessing the array where this index is stored. The object stored there is 

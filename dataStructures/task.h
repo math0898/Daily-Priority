@@ -31,6 +31,15 @@ class Task { //TODO operator=, and copy constructor
     public:
 
         /**
+         * For arrays of tasks it seems that a constructor requiring no parameters is needed so here it is.
+         */
+        Task () {
+            priority = 0;
+            name = "";
+            description = nullptr;
+        }
+
+        /**
          * The default constructor for a new task. Requires a name and priority.
          * 
          * @param name The name that the task will go by.
@@ -48,9 +57,11 @@ class Task { //TODO operator=, and copy constructor
         Task (std::string filename);
 
         /**
-         * Destroys the task by properly deconstructing the pointers.
+         * Destroys the task by properly deconstructing the description.
          */
-        ~Task ();
+        ~Task () {
+            delete(description);
+        }
 
         /**
          * Adds a line to the descrption of the task.
